@@ -1,0 +1,3 @@
+# First Moto - static export + PHP CMS
+DirectoryIndex index.html index.php
+Options -Indexes

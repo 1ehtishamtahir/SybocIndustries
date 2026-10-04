@@ -1,0 +1,33 @@
+node_modules/
+.next/
+out/
+build/
+.dev-mysql/
+
+*.log
+npm-debug.log*
+
+.env*.local
+.env
+
+coverage/
+playwright-report/
+test-results/
+blob-report/
+.playwright/
+
+
+/app/generated/prisma
+
+# local media uploads (keep the folder, not the files)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# local scratch scripts and AI-tool state
+race1.cjs
+repro-fizz.cjs
+repro-fizz2.cjs
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
