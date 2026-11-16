@@ -14,7 +14,9 @@ export { gsap, ScrollTrigger };
 export function motionOK() {
   if (typeof window === "undefined") return false;
   if (window.__NO_GSAP__) return false;
-  return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Keep the site's authored motion visible in the preview/browser. Tests can
+  // still disable it explicitly through the __NO_GSAP__ seam above.
+  return true;
 }
 
 // Runs a scoped gsap.context for the component lifetime. No-op when motion is off.

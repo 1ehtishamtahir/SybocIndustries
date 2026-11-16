@@ -6,9 +6,9 @@ import { getSettings, parseJson } from "../../lib/content";
 
 export const metadata = {
   title: "Contact",
-  description: "Email the First Moto trade desk, see the hours, or request a quote.",
+  description: "Email the SYBOC INDUSTRIES trade desk, see the hours, or request a quote.",
   alternates: { canonical: "/contact" },
-  openGraph: { title: "Contact | First Moto", description: "Talk to the trade desk.", url: "/contact" },
+  openGraph: { title: "Contact | SYBOC INDUSTRIES", description: "Talk to the trade desk.", url: "/contact" },
 };
 
 export default async function ContactPage() {
@@ -17,7 +17,7 @@ export default async function ContactPage() {
   const hours = parseJson(settings["contact.hours"], []);
   const whatsapp = (settings["contact.whatsapp"] || process.env.NEXT_PUBLIC_WHATSAPP || "").replace(/\D/g, "");
   const waHref = whatsapp
-    ? `https://wa.me/${whatsapp}?text=${encodeURIComponent("Hi First Moto, I have a question about your suits.")}`
+    ? `https://wa.me/${whatsapp}?text=${encodeURIComponent("Hi SYBOC INDUSTRIES, I have a question about your collection.")}`
     : null;
 
   return (
@@ -30,7 +30,7 @@ export default async function ContactPage() {
         <div className="cols">
           <Reveal className="contact-list" stagger={0.12}>
             <div className="card-info contact-visual">
-              <Image src="/First Moto.jpg" alt="First Moto — ride first, ride strong" width={1080} height={1080} />
+              <Image src="/First Moto.jpg" alt="SYBOC INDUSTRIES leather collection" width={1080} height={1080} />
             </div>
             <div className="card-info">
               <h2 className="sub">Email</h2>

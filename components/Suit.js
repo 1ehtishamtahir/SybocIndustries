@@ -1,4 +1,4 @@
-export default function Suit({ base = "#000", accent = "#e10600", trim = "#fff", id = "suit", label = "Racing suit", decorative = false }) {
+export default function Suit({ base = "#000", accent = "#ff4a0a", trim = "#fff", id = "suit", label = "Leather garment", decorative = false }) {
   const body =
     "M85 18L115 18L152 34L188 200L162 206L146 110L142 210L138 388L104 388L100 230L96 230L96 388L62 388L58 210L54 110L38 206L12 200L48 34Z";
   const a11y = decorative ? { "aria-hidden": "true", focusable: "false" } : { role: "img", "aria-label": label };

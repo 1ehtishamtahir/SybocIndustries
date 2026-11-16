@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motionOK } from "./motion";
 
-// First-visit splash: FM mark + red sweep, once per browser session.
+// First-visit splash: SYBOC logo + orange sweep, once per browser session.
 // Purely decorative (pointer-events:none, aria-hidden) so it never blocks interaction.
 export default function Splash() {
   const [show, setShow] = useState(false);
@@ -28,11 +28,11 @@ export default function Splash() {
   return (
     <div className="splash" aria-hidden="true">
       <div className="splash-inner">
-        <Image src="/logo-mark.png" alt="" width={768} height={400} className="splash-mark" />
+        <Image src="/syboc-logo.png" alt="" width={1004} height={392} className="splash-mark" />
         <div className="splash-bar">
           <i />
         </div>
-        <p className="splash-tag">Ride first. Ride strong.</p>
+        <p className="splash-tag">Wear your identity.</p>
       </div>
     </div>
   );

@@ -2,7 +2,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageShell from "../../../components/PageShell";
 import { Reveal, SplitLines } from "../../../components/motion";
-import { getPublishedPost, getSettings } from "../../../lib/content";
+import { getPublishedPost, getPublishedPosts, getSettings } from "../../../lib/content";
+
+// Only the static export build enumerates these; the server build resolves
+// slugs at request time (the root layout is force-dynamic there).
+export async function generateStaticParams() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -40,16 +47,16 @@ export default async function BlogPostPage({ params }) {
     description: post.excerpt || undefined,
     datePublished: new Date(post.publishedAt).toISOString(),
     author: post.author ? { "@type": "Person", name: post.author.name } : undefined,
-    publisher: { "@type": "Organization", name: settings["site.name"] || "First Moto" },
+    publisher: { "@type": "Organization", name: settings["site.name"] || "SYBOC INDUSTRIES" },
     mainEntityOfPage: `/blog/${post.slug}`,
   };
 
   return (
-    <PageShell mainClass="page">
+    <PageShell mainClass="page article-layout">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <header className="page-head">
-        <p className="eyebrow">
+        <p className="eyebrow article-meta">
           {fmt(post.publishedAt)}
           {post.category ? ` / ${post.category.name}` : ""}
         </p>

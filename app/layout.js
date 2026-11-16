@@ -1,29 +1,39 @@
-import { Big_Shoulders, Barlow } from "next/font/google";
 import Script from "next/script";
+import { Archivo_Black } from "next/font/google";
 import Splash from "../components/Splash";
 import { getSettings } from "../lib/content";
 import "./globals.css";
+import "./light-theme.css";
+import "./social.css";
+import "./fitting.css";
+import "./landing.css";
+import "./landing-overrides.css";
+import "./company-fix.css";
+import "./responsive.css";
 
-const display = Big_Shoulders({ subsets: ["latin"], variable: "--display", adjustFontFallback: false });
-const body = Barlow({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--body" });
+const archivoBlack = Archivo_Black({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-archivo-black",
+  display: "swap",
+});
 
-// Everything below the root layout renders per request: public pages read CMS
-// content from MySQL, admin routes read the session cookie.
-export const dynamic = "force-dynamic";
+// The public site uses local frontend data and can be statically exported.
+export const dynamic = "force-static";
 
-const site = process.env.NEXT_PUBLIC_SITE_URL || "https://firstmoto.example";
+const site = process.env.NEXT_PUBLIC_SITE_URL || "https://sybocindustries.example";
 const plausible = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 
-const defaultTitle = "First Moto | Wholesale racing and moto suits";
+const defaultTitle = "SYBOC INDUSTRIES | Leather, Motorcycle and Western Wear";
 const defaultDescription =
-  "Race-grade leather and textile suits for dealers, race teams, schools and fleet buyers.";
+  "SYBOC INDUSTRIES creates distinctive Leather Wear, Motorcycle Wear and Western Wear for retailers and independent brands.";
 
 export async function generateMetadata() {
   const settings = await getSettings();
   const title = settings["seo.title"] || defaultTitle;
   const description = settings["seo.description"] || defaultDescription;
   const template = settings["seo.titleTemplate"] || "";
-  const siteName = settings["site.name"] || "First Moto";
+  const siteName = settings["site.name"] || "SYBOC INDUSTRIES";
 
   return {
     metadataBase: new URL(site),
@@ -42,11 +52,16 @@ export async function generateMetadata() {
   };
 }
 
-export const viewport = { themeColor: "#000000" };
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#000000",
+};
 
 export default async function RootLayout({ children }) {
   const settings = await getSettings();
-  const siteName = settings["site.name"] || "First Moto";
+  const siteName = settings["site.name"] || "SYBOC INDUSTRIES";
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -54,8 +69,8 @@ export default async function RootLayout({ children }) {
         "@type": "Organization",
         name: siteName,
         url: site,
-        logo: `${site}/logo-mark.png`,
-        email: settings["contact.email"] || "trade@firstmoto.example",
+        logo: `${site}/syboc-logo.png`,
+        email: settings["contact.email"] || "sales@sybocindustries.example",
       },
       {
         "@type": "WebSite",
@@ -66,7 +81,7 @@ export default async function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`} data-scroll-behavior="smooth">
+    <html lang="en" className={archivoBlack.variable} data-scroll-behavior="smooth">
       <body>
         <noscript>
           {/* Home prerenders behind a Suspense boundary; without JS the reveal

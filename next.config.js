@@ -2,6 +2,9 @@
 // production never does, so 'unsafe-eval' stays out of the shipped policy.
 const isDev = process.env.NODE_ENV === "development";
 
+// Static export mode is available for frontend-only hosting.
+const isExport = process.env.NEXT_OUTPUT === "export";
+
 const csp = [
   "default-src 'self'",
   // 'unsafe-inline' for Next's bootstrap scripts and React style attributes;
@@ -29,9 +32,21 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async headers() {
-    return [{ source: "/(.*)", headers: securityHeaders }];
-  },
+  ...(isExport
+    ? {
+        output: "export",
+        distDir: ".next-export",
+        // Directory-style URLs (blog/index.html) so any static host resolves
+        // the extensionless links the app renders (/blog, /suits/...).
+        trailingSlash: true,
+        // Static hosts serve /public images as-is, so skip the optimizer.
+        images: { loader: "custom", loaderFile: "./scripts/export-image-loader.js" },
+      }
+    : {
+        async headers() {
+          return [{ source: "/(.*)", headers: securityHeaders }];
+        },
+      }),
 };
 
 module.exports = nextConfig;

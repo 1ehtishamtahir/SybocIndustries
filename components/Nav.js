@@ -102,29 +102,31 @@ export default function Nav({ items = [], products = [], email = "" }) {
 
   return (
     <header className={classes} ref={rootRef} style={{ viewTransitionName: "site-header" }}>
-      <Link href={logoHref} className="logo" transitionTypes={["nav-back"]}>
-        <Image src="/logo.png" alt="First Moto" width={927} height={545} className="logo-full" />
-      </Link>
-      <button
-        type="button"
-        ref={btnRef}
-        className="menu-btn"
-        aria-expanded={open}
-        aria-controls="nav-links"
-        onClick={() => setOpen((o) => !o)}
-      >
-        <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-        <span className="bars" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-        </span>
-      </button>
-      <nav id="nav-links" ref={panelRef} data-open={open}>
+      <div className="nav-shell">
+        <Link href={logoHref} className="logo" transitionTypes={["nav-back"]}>
+          <Image src="/syboc-logo.png" alt="SYBOC INDUSTRIES" width={1004} height={392} className="logo-image" priority />
+        </Link>
+        <span className="nav-divider" aria-hidden="true" />
+        <button
+          type="button"
+          ref={btnRef}
+          className="menu-btn"
+          aria-expanded={open}
+          aria-controls="nav-links"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+          <span className="bars" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
+        </button>
+        <nav id="nav-links" ref={panelRef} data-open={open} aria-label="Primary navigation">
         {items
           .filter((item) => !item.isCta)
           .map((item) =>
-            item.href === "/suits" ? (
+            item.href === "/products" ? (
               <div className="nav-item" data-sub={sub} key={item.href}>
                 <Link href={item.href} aria-current={section(item.href)} onClick={() => setOpen(false)} transitionTypes={["nav-forward"]}>
                   {item.label}
@@ -133,18 +135,18 @@ export default function Nav({ items = [], products = [], email = "" }) {
                   type="button"
                   className="sub-btn"
                   aria-expanded={sub}
-                  aria-controls="suit-menu"
+                  aria-controls="products-menu"
                   onClick={() => setSub((s) => !s)}
                 >
                   <span className="sr-only">{sub ? "Hide suits" : "Show suits"}</span>
                   <span aria-hidden="true">{sub ? "−" : "+"}</span>
                 </button>
-                <div className="dropdown" id="suit-menu">
+                <div className="dropdown" id="products-menu">
                   {products.map((s) => (
                     <Link
                       key={s.slug}
-                      href={`/suits/${s.slug}`}
-                      aria-current={exact(`/suits/${s.slug}`)}
+                      href={s.href || `/suits/${s.slug}`}
+                      aria-current={exact(s.href || `/suits/${s.slug}`)}
                       onClick={() => setOpen(false)}
                       transitionTypes={["nav-forward"]}
                     >
@@ -159,18 +161,12 @@ export default function Nav({ items = [], products = [], email = "" }) {
               </Link>
             )
           )}
-        {items
-          .filter((item) => item.isCta)
-          .map((item) => (
-            <Link className="btn nav-cta" key={item.href} href={item.href} aria-current={exact(item.href)} onClick={() => setOpen(false)} transitionTypes={["nav-forward"]}>
-              {item.label}
-            </Link>
-          ))}
         <p className="nav-note">
           Trade desk, Mon–Sat
           <a href={`mailto:${email}`}>{email}</a>
         </p>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 }

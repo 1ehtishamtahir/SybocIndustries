@@ -41,14 +41,12 @@ export default function HeroSlider({ slides = [] }) {
   };
 
   if (count === 0) return null;
-  const slide = heroSlides[index];
-
   return (
     <section
       className="hero-slider"
       id="top"
       aria-roledescription="carousel"
-      aria-label="First Moto gallery"
+          aria-label="SYBOC INDUSTRIES collection gallery"
       onPointerEnter={() => setPaused(true)}
       onPointerLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
@@ -77,39 +75,6 @@ export default function HeroSlider({ slides = [] }) {
         ))}
       </div>
 
-      <div className="hero-slider-copy">
-        <div className="hero-slider-text" key={index}>
-          <p className="eyebrow">Wholesale / 01</p>
-          <h2>{slide.title}</h2>
-          <p className="lede">{slide.note}</p>
-        </div>
-      </div>
-
-      <div className="hero-slider-ui">
-        <p className="hero-count" aria-hidden="true">
-          <b>{String(index + 1).padStart(2, "0")}</b> / {String(count).padStart(2, "0")}
-        </p>
-        <div className="hero-dots" role="group" aria-label="Choose a slide">
-          {heroSlides.map((s, i) => (
-            <button
-              type="button"
-              key={s.src}
-              className="hero-dot"
-              aria-label={`Slide ${i + 1}: ${s.title}`}
-              aria-current={i === index ? "true" : undefined}
-              onClick={() => setIndex(i)}
-            />
-          ))}
-        </div>
-        <div className="hero-arrows">
-          <button type="button" className="hero-arrow" aria-label="Previous slide" onClick={() => go(-1)}>
-            <span aria-hidden="true">&#8592;</span>
-          </button>
-          <button type="button" className="hero-arrow" aria-label="Next slide" onClick={() => go(1)}>
-            <span aria-hidden="true">&#8594;</span>
-          </button>
-        </div>
-      </div>
     </section>
   );
 }

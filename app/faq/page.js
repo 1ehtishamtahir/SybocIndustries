@@ -5,9 +5,9 @@ import { faqs } from "../../data/content";
 
 export const metadata = {
   title: "FAQ",
-  description: "MOQ, wholesale pricing, lead times, branding, certifications and shipping for First Moto trade orders.",
+  description: "Product categories, wholesale pricing, availability and ordering for SYBOC INDUSTRIES trade customers.",
   alternates: { canonical: "/faq" },
-  openGraph: { title: "FAQ | First Moto", description: "MOQ, lead times, branding and terms.", url: "/faq" },
+  openGraph: { title: "FAQ | SYBOC INDUSTRIES", description: "Categories, ordering and wholesale terms.", url: "/faq" },
 };
 
 const jsonLd = {

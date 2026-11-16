@@ -1,0 +1,570 @@
+[
+  {
+    "articleCode": "SI-LJ-01",
+    "fileName": "SI-LJ-01.png",
+    "originalName": "Black Leather Bomber Jacket with Red Lining.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-01.png"
+  },
+  {
+    "articleCode": "SI-LJ-02",
+    "fileName": "SI-LJ-02.png",
+    "originalName": "Black Leather Double-Breasted Overcoat.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-02.png"
+  },
+  {
+    "articleCode": "SI-LJ-03",
+    "fileName": "SI-LJ-03.png",
+    "originalName": "Black Shearling Aviator Duffle Coat.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-03.png"
+  },
+  {
+    "articleCode": "SI-LJ-04",
+    "fileName": "SI-LJ-04.png",
+    "originalName": "Black, Yellow, and White Biker Jacket.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-04.png"
+  },
+  {
+    "articleCode": "SI-LJ-05",
+    "fileName": "SI-LJ-05.png",
+    "originalName": "Distressed Green Suede Moto Jacket.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-05.png"
+  },
+  {
+    "articleCode": "SI-LJ-06",
+    "fileName": "SI-LJ-06.png",
+    "originalName": "Forest Green Leather Biker Jacket.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-06.png"
+  },
+  {
+    "articleCode": "SI-LJ-07",
+    "fileName": "SI-LJ-07.png",
+    "originalName": "Isolated Black Fur-Hooded Winter Parka.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-07.png"
+  },
+  {
+    "articleCode": "SI-LJ-08",
+    "fileName": "SI-LJ-08.png",
+    "originalName": "Isolated Black Leather Moto Jacket.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-08.png"
+  },
+  {
+    "articleCode": "SI-LJ-09",
+    "fileName": "SI-LJ-09.png",
+    "originalName": "Isolated Distressed Black Biker Jacket.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-09.png"
+  },
+  {
+    "articleCode": "SI-LJ-10",
+    "fileName": "SI-LJ-10.png",
+    "originalName": "Olive-Gray Tactical Motorcycle Jacket.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-10.png"
+  },
+  {
+    "articleCode": "SI-LJ-11",
+    "fileName": "SI-LJ-11.png",
+    "originalName": "Red Distressed Leather Biker Jacket.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-11.png"
+  },
+  {
+    "articleCode": "SI-LJ-12",
+    "fileName": "SI-LJ-12.png",
+    "originalName": "Vintage Olive Distressed Leather Jacket.png",
+    "category": "SI - Leather Jacket",
+    "categoryPrefix": "SI-LJ",
+    "relativePath": "SI - Leather Jacket/SI-LJ-12.png"
+  },
+  {
+    "articleCode": "SI-LRJ-01",
+    "fileName": "SI-LRJ-01.png",
+    "originalName": "Black Leather Biker Jacket Product Cutout.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-01.png"
+  },
+  {
+    "articleCode": "SI-LRJ-02",
+    "fileName": "SI-LRJ-02.png",
+    "originalName": "Black Leather Motorcycle Jacket Cutout.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-02.png"
+  },
+  {
+    "articleCode": "SI-LRJ-03",
+    "fileName": "SI-LRJ-03.png",
+    "originalName": "Black Red White Biker Jacket Cutout.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-03.png"
+  },
+  {
+    "articleCode": "SI-LRJ-04",
+    "fileName": "SI-LRJ-04.png",
+    "originalName": "Black Red-Accented Biker Jacket.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-04.png"
+  },
+  {
+    "articleCode": "SI-LRJ-05",
+    "fileName": "SI-LRJ-05.png",
+    "originalName": "Black and Yellow Leather Varsity Jacket.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-05.png"
+  },
+  {
+    "articleCode": "SI-LRJ-06",
+    "fileName": "SI-LRJ-06.png",
+    "originalName": "Blue and White Motorcycle Jacket.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-06.png"
+  },
+  {
+    "articleCode": "SI-LRJ-07",
+    "fileName": "SI-LRJ-07.png",
+    "originalName": "Mustard and Black Varsity Bomber Jacket.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-07.png"
+  },
+  {
+    "articleCode": "SI-LRJ-08",
+    "fileName": "SI-LRJ-08.png",
+    "originalName": "White and Black Moto Jacket Cutout.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-08.png"
+  },
+  {
+    "articleCode": "SI-LRJ-09",
+    "fileName": "SI-LRJ-09.png",
+    "originalName": "White and Black Textured Bomber Jacket.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-09.png"
+  },
+  {
+    "articleCode": "SI-LRJ-10",
+    "fileName": "SI-LRJ-10.png",
+    "originalName": "White and Red Moto Jacket.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-10.png"
+  },
+  {
+    "articleCode": "SI-LRJ-11",
+    "fileName": "SI-LRJ-11.png",
+    "originalName": "White and Red Moto Leather Jacket.png",
+    "category": "SI - Leather Racing Jacket",
+    "categoryPrefix": "SI-LRJ",
+    "relativePath": "SI - Leather Racing Jacket/SI-LRJ-11.png"
+  },
+  {
+    "articleCode": "SI-LS-01",
+    "fileName": "SI-LS-01.png",
+    "originalName": "Black Faux-Leather A-Line Maxi Skirt.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-01.png"
+  },
+  {
+    "articleCode": "SI-LS-02",
+    "fileName": "SI-LS-02.png",
+    "originalName": "Burgundy Top and Black Leather Skirt Outfit.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-02.png"
+  },
+  {
+    "articleCode": "SI-LS-03",
+    "fileName": "SI-LS-03.png",
+    "originalName": "Confident Woman in Burgundy and Leather.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-03.png"
+  },
+  {
+    "articleCode": "SI-LS-04",
+    "fileName": "SI-LS-04.png",
+    "originalName": "Flame Leather Mini Skirt Cutout.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-04.png"
+  },
+  {
+    "articleCode": "SI-LS-05",
+    "fileName": "SI-LS-05.png",
+    "originalName": "Gothic Leather Skirt and Boots Outfit.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-05.png"
+  },
+  {
+    "articleCode": "SI-LS-06",
+    "fileName": "SI-LS-06.png",
+    "originalName": "Isolated Black Leather Fashion Outfit.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-06.png"
+  },
+  {
+    "articleCode": "SI-LS-07",
+    "fileName": "SI-LS-07.png",
+    "originalName": "Ivory Blouse and Leather Midi Skirt Ensemble.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-07.png"
+  },
+  {
+    "articleCode": "SI-LS-08",
+    "fileName": "SI-LS-08.png",
+    "originalName": "Patterned Sweater and Leather Maxi Skirt Outfit.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-08.png"
+  },
+  {
+    "articleCode": "SI-LS-09",
+    "fileName": "SI-LS-09.png",
+    "originalName": "Red Top, Black Culottes and Boots.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-09.png"
+  },
+  {
+    "articleCode": "SI-LS-10",
+    "fileName": "SI-LS-10.png",
+    "originalName": "Rose Gold Snakeskin Skirt Set Cutout.png",
+    "category": "SI - Leather Skirts",
+    "categoryPrefix": "SI-LS",
+    "relativePath": "SI - Leather Skirts/SI-LS-10.png"
+  },
+  {
+    "articleCode": "SI-LV-01",
+    "fileName": "SI-LV-01.png",
+    "originalName": "Black Leather Biker Vest Cutout.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-01.png"
+  },
+  {
+    "articleCode": "SI-LV-02",
+    "fileName": "SI-LV-02.png",
+    "originalName": "Black Leather Moto Vest Product Cutout.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-02.png"
+  },
+  {
+    "articleCode": "SI-LV-03",
+    "fileName": "SI-LV-03.png",
+    "originalName": "Black Leather Motorcycle Vest Product Render.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-03.png"
+  },
+  {
+    "articleCode": "SI-LV-04",
+    "fileName": "SI-LV-04.png",
+    "originalName": "Black Quilted Moto Leather Vest.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-04.png"
+  },
+  {
+    "articleCode": "SI-LV-05",
+    "fileName": "SI-LV-05.png",
+    "originalName": "Black Tactical Leather-Trimmed Vest.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-05.png"
+  },
+  {
+    "articleCode": "SI-LV-06",
+    "fileName": "SI-LV-06.png",
+    "originalName": "Black and Brown Leather Biker Vest.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-06.png"
+  },
+  {
+    "articleCode": "SI-LV-07",
+    "fileName": "SI-LV-07.png",
+    "originalName": "Black and Gray Quilted Tactical Vest.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-07.png"
+  },
+  {
+    "articleCode": "SI-LV-08",
+    "fileName": "SI-LV-08.png",
+    "originalName": "Charcoal Leather Biker Vest Cutout.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-08.png"
+  },
+  {
+    "articleCode": "SI-LV-09",
+    "fileName": "SI-LV-09.png",
+    "originalName": "Cognac Leather Biker Vest Cutout.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-09.png"
+  },
+  {
+    "articleCode": "SI-LV-10",
+    "fileName": "SI-LV-10.png",
+    "originalName": "Distressed Brown Leather Biker Vest.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-10.png"
+  },
+  {
+    "articleCode": "SI-LV-11",
+    "fileName": "SI-LV-11.png",
+    "originalName": "Quilted Leather Vest Front and Back.png",
+    "category": "SI - Leather Vest",
+    "categoryPrefix": "SI-LV",
+    "relativePath": "SI - Leather Vest/SI-LV-11.png"
+  },
+  {
+    "articleCode": "SI-LP-01",
+    "fileName": "SI-LP-01.png",
+    "originalName": "Autumn Chic Outfit Cutout.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-01.png"
+  },
+  {
+    "articleCode": "SI-LP-02",
+    "fileName": "SI-LP-02.png",
+    "originalName": "Black Leather Biker Pants Product Cutout.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-02.png"
+  },
+  {
+    "articleCode": "SI-LP-03",
+    "fileName": "SI-LP-03.png",
+    "originalName": "Black Leather Cargo Pants Product Cutout.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-03.png"
+  },
+  {
+    "articleCode": "SI-LP-04",
+    "fileName": "SI-LP-04.png",
+    "originalName": "Black Leather Pants Product Cutout.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-04.png"
+  },
+  {
+    "articleCode": "SI-LP-05",
+    "fileName": "SI-LP-05.png",
+    "originalName": "Black Leather Pants and Boots Cutout.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-05.png"
+  },
+  {
+    "articleCode": "SI-LP-06",
+    "fileName": "SI-LP-06.png",
+    "originalName": "Camel Leather Palazzos and White Crop Top.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-06.png"
+  },
+  {
+    "articleCode": "SI-LP-07",
+    "fileName": "SI-LP-07.png",
+    "originalName": "Glossy Black Leather Biker Pants and Boots (1).png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-07.png"
+  },
+  {
+    "articleCode": "SI-LP-08",
+    "fileName": "SI-LP-08.png",
+    "originalName": "Glossy Black Leather Biker Pants and Boots.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-08.png"
+  },
+  {
+    "articleCode": "SI-LP-09",
+    "fileName": "SI-LP-09.png",
+    "originalName": "Glossy Leather Pants and Boots Cutout (1).png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-09.png"
+  },
+  {
+    "articleCode": "SI-LP-10",
+    "fileName": "SI-LP-10.png",
+    "originalName": "Glossy Leather Pants and Boots Cutout.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-10.png"
+  },
+  {
+    "articleCode": "SI-LP-11",
+    "fileName": "SI-LP-11.png",
+    "originalName": "Leather Racing Pants and Boots.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-11.png"
+  },
+  {
+    "articleCode": "SI-LP-12",
+    "fileName": "SI-LP-12.png",
+    "originalName": "Neon Flame Painted Leather Pants.png",
+    "category": "SI - Leather Pants",
+    "categoryPrefix": "SI-LP",
+    "relativePath": "SI - Leather Pants/SI-LP-12.png"
+  },
+  {
+    "articleCode": "SI-RH-01",
+    "fileName": "SI-RH-01.png",
+    "originalName": "Asymmetrical Black Stripe Hoodie.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-01.png"
+  },
+  {
+    "articleCode": "SI-RH-02",
+    "fileName": "SI-RH-02.png",
+    "originalName": "Black Athletic Hoodie with Orange Zippers.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-02.png"
+  },
+  {
+    "articleCode": "SI-RH-03",
+    "fileName": "SI-RH-03.png",
+    "originalName": "Black Hoodie Product Cutout.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-03.png"
+  },
+  {
+    "articleCode": "SI-RH-04",
+    "fileName": "SI-RH-04.png",
+    "originalName": "Black Hoodie Product Display.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-04.png"
+  },
+  {
+    "articleCode": "SI-RH-05",
+    "fileName": "SI-RH-05.png",
+    "originalName": "Black Hoodie with Red Pocket Stripes.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-05.png"
+  },
+  {
+    "articleCode": "SI-RH-06",
+    "fileName": "SI-RH-06.png",
+    "originalName": "Black Pullover Hoodie Mockup.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-06.png"
+  },
+  {
+    "articleCode": "SI-RH-07",
+    "fileName": "SI-RH-07.png",
+    "originalName": "Black Zip-Up Hoodie Jacket.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-07.png"
+  },
+  {
+    "articleCode": "SI-RH-08",
+    "fileName": "SI-RH-08.png",
+    "originalName": "Black and Gray Swoosh Hoodie.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-08.png"
+  },
+  {
+    "articleCode": "SI-RH-09",
+    "fileName": "SI-RH-09.png",
+    "originalName": "Charcoal Hoodie with Orange Zippers.png",
+    "category": "SI - Racing Hoodie",
+    "categoryPrefix": "SI-RH",
+    "relativePath": "SI - Racing Hoodie/SI-RH-09.png"
+  },
+  {
+    "articleCode": "SI-SRJ-01",
+    "fileName": "SI-SRJ-01.png",
+    "originalName": "Black and Red Armored Motorcycle Jacket (1).png",
+    "category": "SI - Summer Racing Jacket",
+    "categoryPrefix": "SI-SRJ",
+    "relativePath": "SI - Summer Racing Jacket/SI-SRJ-01.png"
+  },
+  {
+    "articleCode": "SI-SRJ-02",
+    "fileName": "SI-SRJ-02.png",
+    "originalName": "Black and Red Armored Motorcycle Jacket.png",
+    "category": "SI - Summer Racing Jacket",
+    "categoryPrefix": "SI-SRJ",
+    "relativePath": "SI - Summer Racing Jacket/SI-SRJ-02.png"
+  },
+  {
+    "articleCode": "SI-SRJ-03",
+    "fileName": "SI-SRJ-03.png",
+    "originalName": "Black and Red Motorcycle Riding Jacket.png",
+    "category": "SI - Summer Racing Jacket",
+    "categoryPrefix": "SI-SRJ",
+    "relativePath": "SI - Summer Racing Jacket/SI-SRJ-03.png"
+  },
+  {
+    "articleCode": "SI-SRJ-04",
+    "fileName": "SI-SRJ-04.png",
+    "originalName": "Bucni Black Red Motorcycle Jacket.png",
+    "category": "SI - Summer Racing Jacket",
+    "categoryPrefix": "SI-SRJ",
+    "relativePath": "SI - Summer Racing Jacket/SI-SRJ-04.png"
+  },
+  {
+    "articleCode": "SI-SRJ-05",
+    "fileName": "SI-SRJ-05.png",
+    "originalName": "Sporty Black, White, and Red Motorcycle Jacket.png",
+    "category": "SI - Summer Racing Jacket",
+    "categoryPrefix": "SI-SRJ",
+    "relativePath": "SI - Summer Racing Jacket/SI-SRJ-05.png"
+  },
+  {
+    "articleCode": "SI-SRJ-06",
+    "fileName": "SI-SRJ-06.png",
+    "originalName": "White and Black Technical Motorcycle Jacket.png",
+    "category": "SI - Summer Racing Jacket",
+    "categoryPrefix": "SI-SRJ",
+    "relativePath": "SI - Summer Racing Jacket/SI-SRJ-06.png"
+  }
+]

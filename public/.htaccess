@@ -1,3 +1,18 @@
 # First Moto - static export + PHP CMS
 DirectoryIndex index.html index.php
 Options -Indexes
+
+# Branded 404 from the static export (written next to this file).
+ErrorDocument 404 /404.html
+
+# Same policy as the server build (next.config.js) — a static host sends no
+# headers of its own. Requires mod_headers; dropped if it is unavailable.
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-DNS-Prefetch-Control "on"
+    Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://plausible.io; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+</IfModule>

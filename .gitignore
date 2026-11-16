@@ -1,5 +1,8 @@
 node_modules/
 .next/
+.next-export/
+.out-tmp/
+.export-tmp/
 out/
 build/
 .dev-mysql/
@@ -23,6 +26,23 @@ blob-report/
 public/uploads/*
 !public/uploads/.gitkeep
 
+# PHP CMS: generated installer output (never commit database credentials)
+cms/config/config.php
+cms/config/install.lock
+cms/config/database.php
+cms/config/*.tmp
+cms/storage/.installed
+cms/storage/logs/*.log
+cms/storage/uploads/*
+!cms/storage/uploads/.gitkeep
+!cms/storage/uploads/.htaccess
+cms/storage/logs/*
+!cms/storage/logs/.gitkeep
+!cms/storage/logs/.htaccess
+cms/storage/cache/*
+!cms/storage/cache/.gitkeep
+!cms/storage/cache/.htaccess
+
 # local scratch scripts and AI-tool state
 race1.cjs
 repro-fizz.cjs
@@ -31,3 +51,7 @@ repro-fizz2.cjs
 .claude/
 .windsurf/
 skills-lock.json
+
+tmp/
+/tmp/
+

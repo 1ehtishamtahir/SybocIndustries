@@ -14,6 +14,12 @@ test("html has scroll padding so anchors clear the fixed nav", async ({ page }) 
 });
 
 test("suit cards link to product pages", async ({ page }) => {
+  // The suits sit in a GSAP scroll-jacked track (components/Scroll.js): with
+  // motion on, the card can move between hover and click under load. The
+  // visual tests use the same seam to pin the resting state.
+  await page.addInitScript(() => {
+    window.__NO_GSAP__ = true;
+  });
   await page.goto("/");
   const first = page.locator(".card h3 a").first();
   await expect(first).toHaveAttribute("href", /^\/suits\//);

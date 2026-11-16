@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger, motionOK } from "./motion";
 
-const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reduced = () => false;
 
 // Red bar at the top that fills as the page scrolls.
 export function ScrollBar() {

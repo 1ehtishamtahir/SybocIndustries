@@ -3,10 +3,10 @@ import { Reveal, SplitLines } from "../../components/motion";
 import { getSetting } from "../../lib/content";
 
 export const metadata = {
-  title: "Privacy",
-  description: "What the First Moto quote form collects, how it is used, and how to have it deleted.",
+  title: "Privacy Policy",
+  description: "What the SYBOC INDUSTRIES quote form collects, how it is used, and how to have it deleted.",
   alternates: { canonical: "/privacy" },
-  openGraph: { title: "Privacy | First Moto", description: "How we handle your details.", url: "/privacy" },
+  openGraph: { title: "Privacy Policy | SYBOC INDUSTRIES", description: "How we handle your details.", url: "/privacy" },
 };
 
 export default async function PrivacyPage() {
@@ -14,7 +14,7 @@ export default async function PrivacyPage() {
   return (
     <PageShell mainClass="page">
         <header className="page-head">
-          <SplitLines as="h1">Privacy</SplitLines>
+          <SplitLines as="h1">Privacy Policy</SplitLines>
           <p>Short version: we collect what a quote needs, we use it for that, and we do not sell it.</p>
         </header>
 

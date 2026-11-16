@@ -1,0 +1,1182 @@
+/* Shared responsive guardrails. Keep these rules last so route-specific
+   redesigns cannot reintroduce horizontal overflow on small screens. */
+:root {
+  --page-gutter: clamp(1rem, 5vw, 5.5rem);
+  --announcement-height: 2.5rem;
+  --display: var(--font-archivo-black), "Archivo Black", Impact, sans-serif;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* The announcement starts in normal document flow and scrolls away with the
+   page. The navbar sits below it initially, then takes over the top edge once
+   the scrolled state is active. */
+.announcement-bar {
+  top: 0;
+  height: var(--announcement-height);
+  min-height: var(--announcement-height);
+  position: relative;
+}
+
+.nav,
+.nav.is-compact {
+  top: var(--announcement-height);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav.is-scrolled {
+  top: 0;
+}
+
+/* Internal pages start with the navbar at the top because their announcement
+   bar is intentionally omitted. */
+main[data-announcement="false"] .nav,
+main[data-announcement="false"] .nav.is-compact {
+  top: 0;
+}
+
+/* Announcement bar: Clean, uncluttered layout with Contact (left) & Socials (right) */
+.announcement-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--announcement-height);
+  min-height: var(--announcement-height);
+  padding: 0 clamp(1rem, 3.5vw, 2.5rem);
+  background: #ff4a0a;
+  color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 25;
+  box-sizing: border-box;
+}
+
+/* Contact Info (Left) */
+.announcement-contact {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.4vw, 1.1rem);
+  min-width: 0;
+}
+
+.announcement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.announcement-link:hover {
+  opacity: 0.82;
+  text-decoration: none;
+}
+
+.announcement-link svg {
+  width: 0.92rem;
+  height: 0.92rem;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.announcement-divider {
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background: rgba(255, 255, 255, 0.38);
+  flex: none;
+}
+
+/* Social links (Right) */
+.announcement-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.announcement-socials a {
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.announcement-socials svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.announcement-socials a:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: #fff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .announcement-bar {
+    padding: 0 0.8rem;
+  }
+
+  .announcement-contact {
+    gap: 0.45rem;
+  }
+
+  .announcement-link {
+    font-size: 0.58rem;
+    letter-spacing: 0.01em;
+  }
+
+  .announcement-link svg {
+    width: 0.78rem;
+    height: 0.78rem;
+  }
+
+  .announcement-socials {
+    gap: 0.3rem;
+  }
+
+  .announcement-socials a {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .announcement-socials svg {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+}
+
+/* Keep the product menu easy to discover and comfortable to use. The small
+   bridge prevents the pointer from falling through the gap while moving into
+   the panel. */
+@media (min-width: 701px) {
+  .nav-item {
+    z-index: 2;
+  }
+
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -0.35rem;
+    right: -0.35rem;
+    height: 0.75rem;
+  }
+
+  .nav-item .dropdown {
+    top: calc(100% + 0.6rem);
+    min-width: 16rem;
+    padding: 0.55rem;
+    gap: 0.2rem;
+    border: 1px solid rgba(255, 74, 10, 0.24);
+    border-radius: 0.7rem;
+    box-shadow: 0 1.25rem 2.8rem rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+    background: rgba(255, 255, 255, 0.98);
+    overflow: hidden;
+  }
+
+  .nav-item .dropdown::before {
+    content: "";
+    position: absolute;
+    top: -0.4rem;
+    left: 1.4rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background: inherit;
+    border-left: 1px solid rgba(255, 74, 10, 0.24);
+    border-top: 1px solid rgba(255, 74, 10, 0.24);
+    transform: rotate(45deg);
+  }
+
+  .nav-item .dropdown a {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 2.65rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.42rem;
+    color: #171717;
+    font-size: var(--type-small);
+    letter-spacing: 0.045em;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .nav-item .dropdown a:hover,
+  .nav-item .dropdown a:focus-visible {
+    background: var(--red);
+    color: #fff;
+    transform: translateX(0.2rem);
+  }
+
+  .nav-item .dropdown a[aria-current="page"] {
+    background: rgba(255, 74, 10, 0.09);
+    color: var(--red);
+    box-shadow: inset 3px 0 0 var(--red);
+  }
+}
+
+body {
+  font-size: clamp(0.9375rem, calc(0.9rem + 0.2vw), 1.0625rem);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+label,
+li {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.page,
+.hero,
+.landing-hero,
+.customer-reviews,
+.company-split,
+.home-categories,
+.home-video,
+.faq-teaser,
+.cta {
+  width: 100%;
+  min-width: 0;
+}
+
+.page-head h1,
+.product h1,
+.landing-hero h1,
+.hero-product-copy h1 {
+  max-width: 100%;
+  text-wrap: balance;
+}
+
+/* The supplied hero artwork already contains its composition and typography.
+   Keep the whole image visible; zooming it would crop the designed edges. */
+.hero-slide-img,
+.hero-slide.is-on .hero-slide-img {
+  object-fit: contain;
+  object-position: center;
+  animation: none;
+  transform: none;
+}
+
+.hero-slider {
+  /* Match the supplied banner ratio so the complete artwork stays visible,
+     and leave room for the fixed navbar so it never covers the banner. */
+  height: calc(4.25rem + 33.8108vw);
+  min-height: 0;
+  aspect-ratio: auto;
+}
+
+.hero-slider-media {
+  top: 4.25rem;
+}
+
+/* Keep the desktop brand lockup readable as two intentional lines instead
+   of letting the long second word break into clipped fragments. */
+@media (min-width: 901px) {
+  .hero-product-copy h1 {
+    /* The second line is the longest word in the lockup. Size it against
+       the copy column so it cannot be cropped by .line's mask. */
+    font-size: clamp(3.6rem, 6.8vw, 7.5rem);
+  }
+
+  .hero-product-copy h1 .line {
+    white-space: normal;
+    overflow: visible;
+  }
+}
+
+.nav-shell,
+.footer-top,
+.footer-legal,
+.page-head,
+.product-grid,
+.company-intro,
+.why-lead,
+.journal-feature {
+  min-width: 0;
+}
+
+.footer-top > *,
+.footer-legal > * {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .hero-product-copy h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+  }
+
+  .page-head h1,
+  .product h1 {
+    font-size: clamp(2.75rem, 10vw, 5.75rem);
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --announcement-height: 2.2rem;
+  }
+
+  .page {
+    padding-inline: var(--page-gutter);
+  }
+
+  .nav-item {
+    width: min(20rem, 100%);
+  }
+
+  .nav-item > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item .sub-btn {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.45rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    background: rgba(255, 74, 10, 0.12);
+    color: var(--red);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .nav-item .sub-btn:hover,
+  .nav-item .sub-btn:focus-visible {
+    background: var(--red);
+    color: #fff;
+    transform: scale(1.06);
+  }
+
+  .nav-item[data-sub="true"] .sub-btn {
+    background: var(--red);
+    color: #fff;
+  }
+
+  .nav nav .dropdown {
+    width: min(18rem, 100%);
+    margin-inline: auto;
+    padding: 0.6rem 0.8rem 0;
+    border-top: 1px solid rgba(255, 74, 10, 0.28);
+  }
+
+  .nav nav .dropdown a {
+    width: 100%;
+    min-height: 2.35rem;
+    border-radius: 0.35rem;
+    font-size: var(--type-small);
+    letter-spacing: 0.06em;
+  }
+
+  .hero-slider {
+    height: calc(4.25rem + 33.8108vw);
+    min-height: 0;
+    aspect-ratio: auto;
+    /* The navbar is fixed and 4.25rem tall; keep the whole banner below it
+       instead of letting the opaque navbar cover the top of the artwork. */
+    background: #050505;
+  }
+
+  .hero-slider-media {
+    top: 4.25rem;
+    background: #050505;
+  }
+
+  .page > footer {
+    margin-inline: calc(var(--page-gutter) * -1);
+    padding-inline: var(--page-gutter);
+  }
+
+  .page-head h1,
+  .product h1,
+  .landing-hero h1 {
+    font-size: clamp(2.55rem, 13vw, 4.75rem);
+    letter-spacing: -0.055em;
+  }
+
+  .page-head > p:last-child,
+  .page-head h1 + p {
+    max-width: 38ch;
+  }
+
+  .hero-product-sticky {
+    height: auto;
+    min-height: 0;
+    padding: 7rem var(--page-gutter) 4rem;
+    display: grid;
+    gap: 2.25rem;
+    overflow: hidden;
+  }
+
+  .hero-product-copy,
+  .hero-product-art,
+  .hero-product-info {
+    position: relative;
+    inset: auto;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    transform: none !important;
+  }
+
+  .hero-product-copy {
+    order: 1;
+  }
+
+  .hero-product-art {
+    order: 2;
+    justify-self: center;
+    width: min(62vw, 270px);
+  }
+
+  .hero-product-info {
+    order: 3;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .hero-product-copy h1 {
+    font-size: clamp(2.75rem, 15vw, 5rem);
+  }
+
+  .hero-product-copy .row {
+    gap: 0.7rem;
+  }
+
+  .hero-product-copy .btn {
+    max-width: 100%;
+  }
+
+  .hero-product-stripe {
+    right: -24%;
+    width: 38vw;
+  }
+
+  .reviews-wall-heading h2 {
+    font-size: clamp(2.35rem, 12vw, 4.5rem);
+  }
+
+  .company-numbers,
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand,
+  .footer-contact {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav nav > a:not(.nav-cta),
+  .nav nav > .nav-item > a {
+    font-size: clamp(1.35rem, 7vw, 1.75rem);
+  }
+
+  .hero-product-sticky {
+    padding-inline: 1rem;
+  }
+
+  .hero-product-copy h1,
+  .page-head h1,
+  .product h1,
+  .landing-hero h1 {
+    font-size: clamp(2.35rem, 14vw, 4rem);
+  }
+
+  .btn {
+    padding: 0.85rem 1.1rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-legal {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Site-wide type scale. These tokens intentionally live last so every route
+   uses the same readable sizes, regardless of which editorial stylesheet it
+   imports. */
+:root {
+  --type-body: clamp(0.98rem, 0.93rem + 0.22vw, 1.08rem);
+  --type-small: clamp(0.72rem, 0.68rem + 0.14vw, 0.86rem);
+  --type-label: clamp(0.68rem, 0.62rem + 0.15vw, 0.8rem);
+  --type-h1: clamp(2.8rem, 6.3vw, 6.8rem);
+  --type-h2: clamp(2.05rem, 4.2vw, 4.2rem);
+  --type-h3: clamp(1.35rem, 2.35vw, 2.35rem);
+}
+
+body {
+  font-size: var(--type-body);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.hero h1,
+.hero-product-copy h1,
+.landing-hero h1,
+.page-head h1,
+.product h1,
+.notfound h1 {
+  font-size: var(--type-h1);
+  line-height: 0.9;
+}
+
+.hero-product-copy h1 {
+  letter-spacing: 0.01em;
+}
+
+.hero-slider-text h2,
+.intro h2,
+.why-head h2,
+.why-statement h2,
+.why-image-band h2,
+.landing-cta h2,
+.cta h2,
+.faq-teaser h2,
+.section-heading h2,
+.company-split h2,
+.company-intro-copy h2,
+.journal-feature-copy h2,
+.customer-reviews-copy h2,
+.reviews-wall-heading h2 {
+  font-size: var(--type-h2);
+  line-height: 0.92;
+}
+
+.hero-product-info h2,
+.why-item h3,
+.card h3,
+.tile h2,
+.tile h3,
+.why-pillars h3,
+.company-values h3,
+.proof-strip h3,
+.company-milestones h3,
+.fit-steps h3 {
+  font-size: var(--type-h3);
+  line-height: 0.98;
+}
+
+.lede,
+.page-head p,
+.company-split > div:last-child,
+.company-intro-copy p:not(.eyebrow),
+.journal-feature-copy > p:not(.eyebrow),
+.why-lead p:not(.eyebrow),
+.why-pillars p,
+.company-values p:not(.eyebrow),
+.proof-strip p,
+.company-milestones p,
+.fit-intro p:not(.eyebrow),
+.fit-steps p {
+  font-size: var(--type-body);
+  line-height: 1.65;
+}
+
+.eyebrow,
+.hero-stats,
+.footer-kicker,
+.footer-heading,
+.article-meta,
+.text-link,
+.product-copy .crumb,
+.product-price,
+.tile .price {
+  font-size: var(--type-label);
+  line-height: 1.35;
+}
+
+.nav nav a,
+.btn,
+.field label,
+.field input,
+.field select,
+.field textarea,
+.faq summary,
+.footer-nav a,
+.footer-suits a,
+.footer-contact p,
+.footer-legal {
+  font-size: var(--type-small);
+}
+
+.field input,
+.field select,
+.field textarea {
+  line-height: 1.45;
+}
+
+/* Shared button system: one polished treatment across hero, forms, cards and
+   route CTAs, with the ghost variant retaining clear contrast on light/dark
+   sections. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 3.15rem;
+  max-width: 100%;
+  padding: 0.9rem 1.45rem;
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+  background: linear-gradient(135deg, #ff6814, var(--red));
+  box-shadow: 0 0.7rem 1.7rem rgba(255, 74, 10, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-size: var(--type-small);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-wrap: balance;
+  transition: color 0.25s var(--ease), background 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.btn::before {
+  background: #fff;
+}
+
+.btn:hover {
+  color: #171717;
+  border-color: #fff;
+  box-shadow: 0 1rem 2.2rem rgba(255, 74, 10, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0.45rem 1rem rgba(255, 74, 10, 0.2);
+}
+
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 0.55rem 1.3rem rgba(0, 0, 0, 0.08);
+  color: inherit;
+}
+
+.btn.ghost::before {
+  background: var(--white);
+}
+
+.btn.ghost:hover {
+  border-color: var(--white);
+  box-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 4px;
+}
+
+/* Category cards: keep the action in the card flow so it never collides with
+   the description when text wraps or the viewport becomes narrower. */
+.home-category-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid rgba(23, 23, 23, 0.14);
+  border-top: 4px solid var(--red);
+  border-radius: 0.9rem;
+  background: linear-gradient(145deg, #fffaf7, #fff);
+  box-shadow: 0 1rem 2.5rem rgba(23, 23, 23, 0.08);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s ease;
+}
+
+.home-category-card:hover {
+  border-color: rgba(255, 74, 10, 0.45);
+  box-shadow: 0 1.5rem 3.5rem rgba(23, 23, 23, 0.14), 0 0 0 1px rgba(255, 74, 10, 0.08);
+  transform: translateY(-6px);
+}
+
+.home-category-card span {
+  font-size: var(--type-label);
+  letter-spacing: 0.18em;
+}
+
+.home-category-card h3 {
+  margin: auto 0 0.8rem;
+  font-size: clamp(1.65rem, 2.6vw, 2.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.home-category-card p {
+  max-width: 30ch;
+  margin: 0;
+  font-size: var(--type-body);
+  line-height: 1.5;
+}
+
+.home-category-card b {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  color: var(--red);
+  font-size: var(--type-label);
+  letter-spacing: 0.12em;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.home-category-card:hover b {
+  gap: 0.8rem;
+  color: #171717;
+}
+
+.why-landing .landing-hero-art {
+  background: transparent;
+}
+
+.why-landing .landing-hero-art img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.company-factory {
+  width: min(1200px, 100%);
+  margin: clamp(3rem, 8vw, 7rem) auto;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(23, 23, 23, 0.14);
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, #fffaf7, #fff);
+  box-shadow: 0 1.5rem 4rem rgba(23, 23, 23, 0.1);
+}
+
+.company-factory-copy {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 42rem;
+  margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+.company-factory-copy .eyebrow {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.company-factory-copy h2 {
+  font-size: var(--type-h2);
+}
+
+.company-factory-copy p:not(.eyebrow) {
+  font-size: var(--type-body);
+  line-height: 1.6;
+}
+
+.company-factory figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.85rem;
+  background: #eee;
+}
+
+.company-factory figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 420px) {
+  .btn {
+    min-height: 2.85rem;
+    padding: 0.8rem 1rem;
+    letter-spacing: 0.07em;
+  }
+}
+
+.page-head > p:last-child,
+.page-head h1 + p {
+  font-size: var(--type-body);
+}
+
+@media (max-width: 700px) {
+  :root {
+    --type-h1: clamp(2.35rem, 11.5vw, 4.6rem);
+    --type-h2: clamp(1.9rem, 8.5vw, 3.4rem);
+    --type-h3: clamp(1.3rem, 5.2vw, 1.95rem);
+  }
+
+  body {
+    line-height: 1.55;
+  }
+
+  .hero-product-copy h1 {
+    font-size: clamp(2.45rem, 13vw, 4.7rem);
+  }
+
+  .hero-product-copy .lede,
+  .hero-product-info .lede {
+    font-size: var(--type-body);
+  }
+
+  .hero-stats {
+    letter-spacing: 0.1em;
+  }
+
+  .reviews-wall-heading h2 {
+    white-space: normal;
+  }
+}
+
+/* ==========================================================================
+   PRODUCT IMAGES & CATALOGUE SHOWCASE (Refined Presentation)
+   ========================================================================== */
+
+/* Disable old overlapping pseudo-element on .tile */
+.tile::after {
+  display: none !important;
+}
+
+/* Card & Tile Base Containers */
+.tile {
+  min-height: 520px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(165deg, #171717 0%, #0d0d0d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: transform 0.35s var(--ease), border-color 0.35s ease, box-shadow 0.35s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.tile:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 74, 10, 0.55);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65), 0 0 35px rgba(255, 74, 10, 0.2);
+}
+
+.tile-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.tile h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
+  padding-right: 2.2rem;
+  font-family: var(--display), Impact, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  max-width: 100%;
+}
+
+.tile h3 a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.tile h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.tile:hover h3 a {
+  color: #ff4a0a;
+}
+
+.tile-top p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 32ch;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  line-height: 1.22;
+  font-family: var(--display), Impact, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0 0 0.35rem;
+  padding-right: 2.5rem;
+  max-width: 100%;
+}
+
+.card h3 a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card:hover h3 a {
+  color: #ff4a0a;
+}
+
+.card p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 32ch;
+}
+
+/* Studio Product Display Stage (Tile & Card) */
+.tile-art,
+.card-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 310px;
+  width: 100%;
+  position: relative;
+  margin: 0.5rem 0;
+  background: radial-gradient(circle at 50% 55%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 48%, transparent 72%);
+  border-radius: 1rem;
+  padding: 0.85rem;
+  box-sizing: border-box;
+}
+
+.tile-img,
+.card-img {
+  width: 100%;
+  height: 100%;
+  max-height: 285px;
+  max-width: 95%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.58));
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
+  pointer-events: none;
+}
+
+.tile:hover .tile-img,
+.card:hover .card-img {
+  transform: translateY(-6px) scale(1.05);
+  filter: drop-shadow(0 22px 36px rgba(255, 74, 10, 0.35)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
+}
+
+/* Article Code Badge */
+.tile-code,
+.card-code {
+  display: inline-flex;
+  align-items: center;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--display), Impact, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  padding: 0.22rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(255, 74, 10, 0.35);
+}
+
+/* Tile Footer */
+.tile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.tile .price {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  position: static;
+}
+
+.tile-cta {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.7rem;
+  background: rgba(255, 74, 10, 0.12);
+  border: 1px solid rgba(255, 74, 10, 0.35);
+  border-radius: 999px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.tile:hover .tile-cta {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+  transform: translateX(2px);
+}
+
+/* Product Detail Page Stage */
+.product-art {
+  position: sticky;
+  top: 6.5rem;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 48%, transparent 75%), #121212;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  padding: clamp(1.5rem, 3.5vw, 3rem);
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.product-stage-showcase {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.product-code-pill {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--display), Impact, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  width: max-content;
+  box-shadow: 0 0 20px rgba(255, 74, 10, 0.35);
+}
+
+.product-detail-img {
+  width: auto;
+  height: auto;
+  max-width: 92%;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.7));
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.45s ease;
+}
+
+.product-art:hover .product-detail-img {
+  transform: scale(1.035);
+  filter: drop-shadow(0 30px 60px rgba(255, 74, 10, 0.25)) drop-shadow(0 15px 30px rgba(0, 0, 0, 0.75));
+}
+
+.products-count {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--mute);
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .tile {
+    min-height: 440px;
+    padding: 1.15rem;
+  }
+
+  .tile-art,
+  .card-art {
+    height: 250px;
+    padding: 0.5rem;
+  }
+
+  .tile-img,
+  .card-img {
+    max-height: 230px;
+  }
+
+  .product-art {
+    min-height: 380px;
+    padding: 1.25rem;
+  }
+
+  .product-detail-img {
+    max-height: 350px;
+  }
+}

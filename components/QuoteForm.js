@@ -21,9 +21,37 @@ const todayIso = () => {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 };
 
-export default function QuoteForm({ initialSuit, products = [] }) {
+// Builds a direct WhatsApp message or email for the frontend-only site.
+function composeDirectRequest(values, products, contactEmail, whatsapp) {
+  const email = contactEmail || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
+  const wa = (whatsapp || process.env.NEXT_PUBLIC_WHATSAPP || "").replace(/\D/g, "");
+  const suit = products.find((s) => s.slug === values.suit);
+  const subject = `Trade quote request — ${values.company || values.name || ""}`;
+  const body = [
+    `Name: ${values.name || ""}`,
+    `Company: ${values.company || ""}`,
+    `Email: ${values.email || ""}`,
+    `Buying as: ${values.buyerType || ""}`,
+    `Suit: ${suit ? suit.name : "The full line (general inquiry)"}`,
+    values.quantity ? `Units: ${values.quantity}` : "",
+    values.date ? `Target delivery: ${values.date}` : "",
+    values.notes ? `Notes: ${values.notes}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  return {
+    mailHref: email
+      ? `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      : "",
+    waHref: wa ? `https://wa.me/${wa}?text=${encodeURIComponent(`${subject}\n\n${body}`)}` : "",
+  };
+}
+
+export default function QuoteForm({ initialSuit, products = [], contactEmail = "", whatsapp = "" }) {
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+  const [fallback, setFallback] = useState(null);
   const dateRef = useRef(null);
   const suitRef = useRef(null);
   const notesRef = useRef(null);
@@ -80,25 +108,38 @@ export default function QuoteForm({ initialSuit, products = [] }) {
 
     setStatus("loading");
     setMessage("");
-    try {
-      const res = await fetch("/api/quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-        signal: typeof AbortSignal.timeout === "function" ? AbortSignal.timeout(15000) : undefined,
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || "Something went wrong. Try again.");
-      setStatus("done");
-      form.reset();
-    } catch (err) {
-      setStatus("error");
-      setMessage(
-        err?.name === "TimeoutError" || err?.name === "AbortError"
-          ? "The request timed out. Try again."
-          : err.message,
-      );
-    }
+    setFallback(composeDirectRequest(values, products, contactEmail, whatsapp));
+    setStatus("direct");
+  }
+
+  if (status === "direct" && fallback) {
+    return (
+      <div className="form-ok" role="status">
+        <h3>Send your request directly</h3>
+        <p>
+          Choose how you want to send the request. Your product mix, quantities and notes are already
+          included.
+        </p>
+        <div className="row">
+          {fallback.waHref && (
+            <a className="btn" href={fallback.waHref} target="_blank" rel="noopener noreferrer">
+              Send on WhatsApp
+            </a>
+          )}
+          {fallback.mailHref && (
+            <a className="btn ghost" href={fallback.mailHref}>
+              Send by email
+            </a>
+          )}
+        </div>
+        {!fallback.waHref && !fallback.mailHref && (
+          <p className="form-error">No trade desk contact is configured for this site yet.</p>
+        )}
+        <button type="button" className="btn ghost" onClick={() => setStatus("idle")}>
+          Back to the form
+        </button>
+      </div>
+    );
   }
 
   if (status === "done") {
@@ -143,7 +184,7 @@ export default function QuoteForm({ initialSuit, products = [] }) {
           <option value="">The full line (general inquiry)</option>
           {products.map((s) => (
             <option key={s.slug} value={s.slug}>
-              {s.name}
+              {s.articleCode ? `${s.articleCode} — ${s.name}` : s.name}
             </option>
           ))}
         </select>

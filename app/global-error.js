@@ -18,12 +18,12 @@ export default function GlobalError({ error, reset }) {
       >
         <div>
           <h1>Something went wrong</h1>
-          <p>First Moto hit an unexpected error.</p>
+          <p>SYBOC INDUSTRIES hit an unexpected error.</p>
           <button
             type="button"
             onClick={() => reset()}
             style={{
-              background: "#e10600",
+              background: "#ff4a0a",
               color: "#fff",
               border: 0,
               padding: ".75rem 1.5rem",

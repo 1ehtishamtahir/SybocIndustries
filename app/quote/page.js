@@ -9,7 +9,7 @@ export const metadata = {
     "Trade pricing, lead times and volume breaks for dealers, race teams, schools and fleet buyers — quoted within one working day.",
   alternates: { canonical: "/quote" },
   openGraph: {
-    title: "Request a quote | First Moto",
+    title: "Request a quote | SYBOC INDUSTRIES",
     description: "Tell us the model mix, quantities and delivery date.",
     url: "/quote",
   },
@@ -51,7 +51,7 @@ export default async function QuotePage() {
           </Reveal>
 
           <Reveal variant="right" duration={1}>
-            <QuoteForm products={products} />
+            <QuoteForm products={products} contactEmail={email} whatsapp={settings["contact.whatsapp"] || ""} />
           </Reveal>
         </div>
     </PageShell>

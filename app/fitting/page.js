@@ -1,5 +1,9 @@
-import { redirect } from "next/navigation";
+import Link from "next/link";
+import PageShell from "../../components/PageShell";
+import { Reveal, SplitLines } from "../../components/motion";
 
-export default function FittingPage() {
-  redirect("/quote");
-}
+export const metadata = { title: "Fit Guide", description: "Prepare sizing and product questions before requesting a SYBOC INDUSTRIES quote.", alternates: { canonical: "/fitting" } };
+
+const steps = [["01", "Measure over your usual layers", "Use a soft tape and keep it level. Measure the chest, waist, hips, shoulder width and sleeve length without pulling the tape tight."], ["02", "Choose the way you will wear it", "Tell us whether the piece is for everyday wear, riding, layering or a team order. Intended use changes the best fit recommendation."], ["03", "Share the measurements with your enquiry", "Include your preferred product, quantity and fit notes. Our team can confirm the next sizing step before production."]];
+
+export default function FittingPage() { return <PageShell mainClass="page"><header className="page-head"><p className="eyebrow">SYBOC / Fit guide</p><SplitLines as="h1">A better fit starts with better information.</SplitLines><p>Use this quick guide before requesting a quote. We will help you confirm the right size, fit and product direction for your order.</p></header><Reveal className="fit-intro" variant="up"><div className="fit-mark">FIT<br /><span>01</span></div><div><p className="eyebrow">Before you order</p><h2>Fit is a product decision, not an afterthought.</h2><p>For wholesale enquiries, the most useful starting point is a measurement set plus a clear idea of how the garment will be worn.</p></div></Reveal><Reveal className="fit-steps" stagger={0.12}>{steps.map(([number, title, copy]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</Reveal><section className="fit-notes"><div className="section-heading"><p className="eyebrow">Useful notes</p><h2>What to include in your message.</h2></div><ul className="bullets"><li>Product name or category and intended customer.</li><li>Chest, waist, hips, shoulder and sleeve measurements.</li><li>Quantity, size split, branding requirements and delivery date.</li><li>Preference for a relaxed, regular or closer fit.</li></ul></section><Reveal className="band-cta" variant="up"><h2>Ready to check the fit?</h2><Link className="btn" href="/quote">Request a quote</Link></Reveal></PageShell>; }
